@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" style="background-color: #eee;">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>Demo</title>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="assets/css/custom-checkbox.css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body style=" padding: 10px 20px;">
+
+	<h1>Custom checkbox/radio demo</h1><br>
+
+    <h2>Checkbox</h2>
+    <label style="padding-right: 10px;"><input type="checkbox" class="custom-chk" id="custom-checkbox" name="test1" value="awesome">Custom checkbox</label>
+    <label style="padding-right: 10px;"><input type="checkbox" class="custom-chk" id="custom-checkbox2" name="test2" value="awesome" checked>Custom checkbox checked</label>
+    <label style="padding-right: 10px;"><input type="checkbox" class="custom-chk" id="custom-checkbox3" name="test3" value="awesome" disabled>Custom checkbox disabled</label>
+    <label style="padding-right: 10px;"><input type="checkbox" class="custom-chk" id="custom-checkbox4" name="test4" value="awesome" disabled checked>Custom checkbox disabled and checked</label>
+    <br /><br />
+
+    <h2>Radio</h2>
+    <label style="padding-right: 10px;"><input type="radio" class="custom-radio" id="custom-radio" name="test5" value="awesome">Custom radio</label>
+    <label style="padding-right: 10px;"><input type="radio" class="custom-radio" id="custom-radio2" name="test5" value="super-awesome" checked>Custom radio checked</label>
+    <label style="padding-right: 10px;"><input type="radio" class="custom-radio" id="custom-radio3" name="test5" value="awesome" disabled>Custom radio disabled</label>
+    <label style="padding-right: 10px;"><input type="radio" class="custom-radio" id="custom-radio4" name="test5" value="super-awesome" disabled checked>Custom radio disabled checked</label>
+    <br /><br />
+
+    <h2>Checkbox with font-awesome</h2>
+    <label style="padding-right: 10px;"><input type="checkbox" class="custom-awesome" id="custom-checkbox-awesome" name="test6" value="awesome">Custom checkbox</label>
+    <label style="padding-right: 10px;"><input type="checkbox" class="custom-awesome" id="custom-checkbox2-awesome" name="test7" value="awesome" checked>Custom checkbox checked</label>
+    <label style="padding-right: 10px;"><input type="checkbox" class="custom-awesome" id="custom-checkbox3-awesome" name="test8" value="awesome" disabled>Custom checkbox disabled</label>
+    <label style="padding-right: 10px;"><input type="checkbox" class="custom-awesome" id="custom-checkbox4-awesome" name="test9" value="awesome" disabled checked>Custom checkbox disabled and checked</label>
+    <br /><br />
+
+    <h2>Radio with font-awesome</h2>
+    <label style="padding-right: 10px;"><input type="radio" class="custom-awesome" id="custom-radio-awesome" name="test10" value="awesome">Custom radio</label>
+    <label style="padding-right: 10px;"><input type="radio" class="custom-awesome" id="custom-radio2-awesome" name="test10" value="super-awesome" checked>Custom radio checked</label>
+    <label style="padding-right: 10px;"><input type="radio" class="custom-awesome" id="custom-radio3-awesome" name="test10" value="awesome" disabled>Custom radio disabled</label>
+    <label style="padding-right: 10px;"><input type="radio" class="custom-awesome" id="custom-radio4-awesome" name="test10" value="super-awesome" disabled checked>Custom radio disabled checked</label>
+    <br /><br />
+
+
+	<script src="custom-checkbox.js"></script>
+	<script>
+		$(function() {
+			//Default : style all checkbox with images
+			$.CustomCheckbox('input.custom-chk');
+
+			//Custom options, all parameters are optional
+			var options = {
+				exclude: null, // jquery objects to exclude. Example: $('input.not-custom')
+                fontAwesome: false, // set to true if you want ot use font-awesome instead of a sprite
+				imagePath: 'assets/images/btn-radio.png',
+				imageHeight: 24, // set width of each state in sprite (if using other image than the one provided)
+				imageWidth: 23, // set width of each state in sprite (if using other image than the one provided)
+				bgOffset: 0, // change background offset (if using other image than the one provided)
+				type: 'radio' // checkbox or radio
+			};
+
+            //Custom radio with options
+			$.CustomCheckbox('input.custom-radio', options);
+
+            //Custom checkbox with font-awesome (no images)
+            $.CustomCheckbox('input[type="checkbox"].custom-awesome', {
+                fontAwesome: true
+            });
+
+            //Custom radio with font-awesome (no images)
+            $.CustomCheckbox('input[type="radio"].custom-awesome', {
+                fontAwesome: true,
+                type: "radio"
+            });
+		});
+	</script>
+</body>
+</html>
