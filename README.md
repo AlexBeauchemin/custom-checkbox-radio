@@ -1,4 +1,4 @@
-custom-checkbox-radio
+Custom checkbox/radio
 =====================
 
 Easy custom checkbox/radio using images or font-awesome. Include custom-checkbox.js and css/custom-checkbox.css and you are ready to go.
