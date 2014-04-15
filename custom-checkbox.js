@@ -18,8 +18,7 @@
                 type: 'checkbox' // checkbox or radio
             }, options || {});
 
-            var self = this,
-                elements = {};
+            var elements = {};
 
             var initialize = function () {
                 if (!el && settings.type=="checkbox")
@@ -81,7 +80,7 @@
                     var el = $(this),
                         field = elements[el.data('link')];
 
-                    if (!el.hasClass('disabled')) {
+                    if (!el.hasClass('disabled') && !el.hasClass('disabled-checked')) {
                         if (el.hasClass('active') && settings.type != 'radio')
                             uncheck(field);
                         else
@@ -97,7 +96,7 @@
                         event.preventDefault();
                         var el = $(this).find('.custom-checkbox'),
                             id = el.data('link');
-                        if (!el.hasClass('disabled')) {
+                        if (!el.hasClass('disabled') && !el.hasClass('disabled-checked')) {
                             if (el.hasClass('active') && settings.type != 'radio')
                                 uncheck(elements[id]);
                             else
